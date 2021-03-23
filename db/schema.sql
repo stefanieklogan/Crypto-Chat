@@ -1,0 +1,3 @@
+DROP DATABASE IF EXISTS cryptoChat_db;
+
+CREATE DATABASE cryptoChat_db;
