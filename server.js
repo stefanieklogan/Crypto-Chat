@@ -16,8 +16,8 @@ const hbs = exphbs.create({ helpers });
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-app.use(express.static(path.join(__dirname, 'public')));
-// app.use(require('./controllers/homepage'));
+app.use(express.static(path.join(__dirname, 'Public')));
+app.use(require('./controllers/homeRoutes'));
 
 app.use(routes);
 
