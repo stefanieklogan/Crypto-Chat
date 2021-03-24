@@ -24,13 +24,3 @@ router.get('/dashboard', async (req, res) => {
 
 module.exports = router;
 
-// router.get('/', async (req, res) => {
-//   try {
-//     const dbGalleryData = await Gallery.findAll({
-//       include: [
-//         {
-//           model: Painting,
-//           attributes: ['filename', 'description'],
-//         },
-//       ],
-//     });
