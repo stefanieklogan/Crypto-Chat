@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+
     <link rel="stylesheet" href="../../public/css/style.css">
     <title>Crypto Chat</title>
 </head>
@@ -15,15 +17,15 @@
         <h1 class="display-3 center">Crypto Chat</h1>
         <nav>
             <div class="nav-wrapper">
-              <ul id="nav-mobile" class="center">
-                <a class="waves-effect waves-light btn" id="homeBtn">Home</a>
-                <a class="waves-effect waves-light btn" id="dashBtn">Dashboard</a>
-                <a class="waves-effect waves-light btn" id="chatBtn">Chat</a>
-                <a class="waves-effect waves-light btn" id="loginBtn">Login</a>
-                <a class="waves-effect waves-light btn" id="logoutBtn">Logout</a>
-              </ul>
+                <ul id="nav-mobile" class="center">
+                    <a class="waves-effect waves-light btn" id="dashBtn">Dashboard</a>
+                    <a class="waves-effect waves-light btn" id="chatBtn">Chat</a>
+                    <a class="waves-effect waves-light btn" id="chatBtn">Signup</a>
+                    <a class="waves-effect waves-light btn" id="loginBtn">Login</a>
+                    <a class="waves-effect waves-light btn" id="logoutBtn">Logout</a>
+                </ul>
             </div>
-          </nav>
+        </nav>
     </header>
     <br>
     <div class="container post z-depth-3">
@@ -40,7 +42,7 @@
         <div class="row blog_content">
             Crypto currency is the hottest currency to-date. Are you ready to invest?
         </div>
-        <a class="waves-effect waves-light btn" id="commentBtn">Comment</a>
+        <a class="waves-effect waves-light btn" id="commentBtn"><i class="far fa-comment"></i></a>
 
     </div>
     <br>
@@ -59,12 +61,82 @@
         <div class="row blog_content">
             Crypto currency is exploding!
         </div>
-        <a class="waves-effect waves-light btn" id="commentBtn">Comment</a>
+        <a class="waves-effect waves-light btn" id="commentBtn"><i class="far fa-comment"></i></a>
 
 
     </div>
+    <br>
+    <br>
+    <br>
+
+    <div class="container center">
+    <div class="row center">
+        <h4><i class="fas fa-coins"></i> Welcome back! <i class="fas fa-coins"></i></h4>
+        <form class="col l4 m6 s4 center signup">
+            
+            <div class="row">
+                <div class="input-field col s12 offset-s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12 offset-s12">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+           
+        </form>
+        
+    </div>
+    <a class="waves-effect waves-light btn"><i class="fas fa-sign-in-alt"></i></a>
+    <br>
+    <br>
+    <br>
+    <h5><a href=”xxxxxxx”>New user? Click here to create account</a></h5>
+</div>
+
+
+    <br>    <br>
+<br>
+<br>
+<div class="container center">
+    <div class="row center">
+        <h5><i class="fab fa-bitcoin"></i> Welcome new user  <i class="fab fa-bitcoin"></i></h5>
+        <form class="col l4 m6 s4 center signup">
+            <div class="row">
+                <div class="input-field col s12 offset-s12">
+                    <input id="name" type="email" class="validate">
+                    <label for="name">Name</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12 offset-s12">
+                    <input id="email" type="email" class="validate">
+                    <label for="email">Email</label>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="input-field col s12 offset-s12">
+                    <input id="password" type="password" class="validate">
+                    <label for="password">Password</label>
+                </div>
+            </div>
+                   </form>
+        
+    </div>
+    <a class="waves-effect waves-light btn"><i class="far fa-save"></i></a>
+</div>
+
+
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+
+
 
 </html>
