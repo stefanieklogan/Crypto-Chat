@@ -13,3 +13,7 @@
 body {
     background-color: rgb(223, 250, 250);
 }
+
+.signup {
+    border-radius: 55em;
+}
