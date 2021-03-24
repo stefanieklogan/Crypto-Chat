@@ -2,10 +2,14 @@ const { Comment } = require('../models');
 
 const commentData = [
   {
-    "comment": "I agree."
+    "comment": "I agree.",
+    "post_id": 2,
+    "user_id": 3
   },
   {
-      "comment": "Can anyone answer when crypto currency began?"
+      "comment": "Can anyone answer when crypto currency began?",
+      "post_id": 1,
+      "user_id": 3
     }
 ]
 
