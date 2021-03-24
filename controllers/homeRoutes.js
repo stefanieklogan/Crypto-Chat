@@ -22,5 +22,20 @@ router.get('/dashboard', async (req, res) => {
       res.render('dashboard', { posts });
     });
 
+    router.get('/login', async (req, res) => {
+      // Send the rendered Handlebars.js template back as the response
+      res.render('login');
+    });
+
+    router.get('/signup', async (req, res) => {
+      // Send the rendered Handlebars.js template back as the response
+      res.render('signup');
+    });
+
+    router.get('/logout', async (req, res) => {
+      // Send the rendered Handlebars.js template back as the response
+      res.render('logout');
+    });
+
 module.exports = router;
 
