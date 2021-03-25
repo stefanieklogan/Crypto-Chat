@@ -2,6 +2,10 @@
     padding: 20px;
 }
 
+.post-container {
+    margin: 50px;
+}
+
 .blog_content {
     font-style: italic;
 }
