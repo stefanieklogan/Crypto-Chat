@@ -17,11 +17,13 @@
     <nav>
       <div class="nav-wrapper">
         <ul id="nav-mobile">
-          <a class="waves-effect waves-light btn" id="dashBtn">Dashboard</a>
-          <a class="waves-effect waves-light btn" id="chatBtn">Chat</a>
-          <a class="waves-effect waves-light btn" id="chatBtn">Signup</a>
-          <a class="waves-effect waves-light btn" id="loginBtn">Login</a>
+          <a href="../dashboard" class="waves-effect waves-light btn" id="dashBtn">Dashboard</a>
+          <a href="../newpost" class= "waves-effect waves-light btn" id="chatBtn">Chat</a>
+          <a href="../login" class="waves-effect waves-light btn" id="login">Login</a>
+          <a href="../signup" class="waves-effect waves-light btn" id="chatBtn">Signup</a>
+          {{#if loggedIn}}
           <a class="waves-effect waves-light btn" id="logoutBtn">Logout</a>
+          {{/if}}
         </ul>
       </div>
     </nav>
@@ -30,5 +32,7 @@
 
 </body>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+<script src="../../Public/js/logout.js"></script>
+<script src='../../Public/js/login.js'></script>
 
 </html>
