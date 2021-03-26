@@ -33,5 +33,9 @@ router.get('/dashboard', async (req, res) => {
       res.render('logout');
     });
 
+    router.get('/coin', async (req, res) => {
+      res.render('coin');
+    });
+
 module.exports = router;
 
