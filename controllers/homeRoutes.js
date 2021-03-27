@@ -27,6 +27,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       })
     });
 
+
     router.get('/login', (req, res) => {
       if (req.session.logged_in) {
         res.redirect('/dashboard');
@@ -35,6 +36,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       res.render('login', {
         title: "Login"
       });
+
     });
 
     router.get('/logout', (req, res) => {
