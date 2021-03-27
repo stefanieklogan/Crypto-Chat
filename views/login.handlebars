@@ -1,9 +1,10 @@
 <div class="container center">
     <div class="row center">
-        <h6><i class="fas fa-coins"></i> Welcome back! <i class="fas fa-coins"></i></h6>
-        <form class="col l4 m6 s4 center signup">
-            
-            <div class="row">
+        <h5><i class="fas fa-coins"></i> Welcome back! <i class="fas fa-coins"></i></h5>
+    </div>
+    <div class="row">
+        <form class="col l4 m6 s4 center login">
+            <div class="row center">
                 <div class="input-field col s12 offset-s12">
                     <input id="email-login" type="email" class="validate">
                     <label for="email">Email</label>
@@ -16,16 +17,19 @@
                     <label for="password">Password</label>
                 </div>
             </div>
-               <button type="submit" class="login-form"> Login</button>
-
         </form>
     </div>
 
-    <!-- <a class="waves-effect waves-light btn login-form"><i class="fas fa-sign-in-alt"></i></a>-->
-    <br>
-    <br>
-    <br>
-    <h5><a href="../signup">New user? Click here to create account</a></h5>
+    <div class="row">
+        <button type="submit" id="login-form" class="waves-effect waves-light btn"><i
+                class="fas fa-sign-in-alt"></i></button>
     </div>
+    <br>
 
-    <script src="./js/login.js"></script>
+    <div class="row">
+        <a href="../signup">
+            <h5>New user? Click here to create account</h5>
+        </a>
+    </div>
+</div>
+<script src="./js/login.js"></script>
