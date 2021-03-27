@@ -15,13 +15,13 @@ Post.init(
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-          length: [2-50]
+          len: [2,50]
       }
     },
     content: {
-      type: DataTypes.STRING,
+      type: DataTypes.TEXT,
       validate: {
-        length: [2-500]
+        len: [2,500]
     }
     },
     date_created: {

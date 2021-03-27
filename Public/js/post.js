@@ -1,20 +1,23 @@
 const newFormHandler = async (event) => {
     event.preventDefault();
+    console.log('button pressed');
   
-    const name = document.querySelector('#post-Title').value.trim();
-    const description = document.querySelector('#post-description').value.trim();
+    const title = document.querySelector('#post-Title').value.trim();
+    const content = document.querySelector('#post-description').value.trim();
   
-    if (name && description) {
-      const response = await fetch('/api/post', {
+    if (title && content) {
+      const response = await fetch('/api/posts', {
         method: 'POST',
-        body: JSON.stringify({ name, description }),
+        body: JSON.stringify({ title: title, content: content }),
         headers: {
           'Content-Type': 'application/json',
         },
       });
-  
+
       if (response.ok) {
-        document.location.replace('/dashboard');
+        console.log(title);
+        console.log(content);
+        // document.location.replace('/dashboard');
       } else {
         alert('Failed to create post');
       }
@@ -22,5 +25,5 @@ const newFormHandler = async (event) => {
   };
 
   document
-  .querySelector('.new-post-form')
+  .querySelector('.save')
   .addEventListener('click', newFormHandler);
