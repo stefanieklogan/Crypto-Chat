@@ -3,17 +3,17 @@
     <div class="row center">
         <h3><i class="fas fa-pen-square "></i> Chat Corner <i class="fas fa-pen-square"></i></h3>
         <p>Share & interact with our Crypto Chat community!</p>
-        <form class="col l10 m6 s4 center post new-post-form">
+        <form action='post_create' method="POST" class="col l10 m6 s4 center post new-post-form">
             <div class="row">
                 <div class="input-field col s12">
-                    <input id="post-Title" type="text">
+                    <input id="post-Title" type="text" name="create_post_title">
                     <label for="name">Title:</label>
                 </div>
             </div>
 
             <div class="row">
                 <div class="input-field col s12">
-                    <textarea id="post-description" class="materialize-textarea"></textarea>
+                    <textarea id="post-description" class="materialize-textarea" name="create_post_desc"></textarea>
                     <label for="textarea1">Summary:</label>
                 </div>
             </div>
