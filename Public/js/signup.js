@@ -20,10 +20,8 @@ const signupFormHandler = async function (event) {
     }
     document
     .querySelector('#signup-form')
-    .addEventListener('submit', signupFormHandler);
+    .addEventListener('click', signupFormHandler);
   };
-
-  console.log(username);
 
 //   document
 //     .querySelector('#signup-form')

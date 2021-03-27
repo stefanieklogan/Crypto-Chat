@@ -1,12 +1,12 @@
 const router = require('express').Router();
 const { Post, User } = require('../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../utils/auth');
 
 router.get('/', async (req, res) => {
   res.render('homepage');
 });
 
-router.get('/dashboard', async (req, res) => {
+router.get('/dashboard', withAuth, async (req, res) => {
   const postData = await Post.findAll({
     include: [
       {
@@ -21,16 +21,31 @@ router.get('/dashboard', async (req, res) => {
       res.render('dashboard', { posts });
     });
 
-    router.get('/login', async (req, res) => {
-      res.render('login');
-    });
-
     router.get('/signup', async (req, res) => {
-      res.render('signup');
+      res.render('signup', {
+        title: "Sign Up"
+      })
     });
 
-    router.get('/logout', async (req, res) => {
-      res.render('logout');
+    router.get('/login', (req, res) => {
+      if (req.session.logged_in) {
+        res.redirect('/dashboard');
+        return;
+      }
+      res.render('login', {
+        title: "Login"
+      });
+    });
+
+    router.get('/logout', (req, res) => {
+      if (req.session.logged_in) {
+        req.session.destroy(() => {
+          res.status(204).redirect('/');
+        });
+      } else {
+        res.status(404).end();
+      }
+      // res.render('logout');
     });
 
     router.get('/coin', async (req, res) => {
@@ -38,4 +53,5 @@ router.get('/dashboard', async (req, res) => {
     });
 
 module.exports = router;
+
 
