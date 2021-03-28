@@ -1,10 +1,9 @@
-    <div class="container center">
-        <div class="row center">
-            <h5><i class="fas fa-coins"></i> Welcome back! <i class="fas fa-coins"></i></h5>
-        </div>
 
-        <form class="col l4 m6 s4 center login">
-
+{{!-- <div class="container center">
+    <div class="row center">
+        <h5><i class="fas fa-coins"></i> Welcome back! <i class="fas fa-coins"></i></h5>
+        <form class="col l4 m6 s4 center signup">
+            
             <div class="row">
                 <div class="input-field col s12">
 
@@ -19,16 +18,48 @@
                     <label for="password">Password</label>
                 </div>
             </div>
-        </form>
-        <div class="row">
-            <button type="submit" class="waves-effect waves-light btn login-form"><i class="fas fa-sign-in-alt"></i></button>
-        </div>
-        <br>
+               <button type="submit" class="login-form button-style btn"> Login</button>
 
-    <div class="row">
-        <a href="../signup">
-            <h6>New user? Click here to create account</h6>
-        </a>
+        </form>
     </div>
-</div>
-<script src="./js/login.js"></script>
+    <br>
+    <br>
+    <br>
+    <h5><a href="../signup">New user? Click here to create account</a></h5>
+    </div> --}}
+
+
+
+
+<body id="grey-background">
+    <div class="container">
+        <div class="row">
+            <div class="col s6">
+                <img class="responsive-img" src="./images/bitcoin.png" alt="bitcoin">
+            </div>
+            <div id="login-style" class="col s6">
+                <h5 class="center"> Welcome back!</h5>
+            <form class="m6 signup">
+                <div class="row">
+                    <div class="input-field">
+                        <input id="email-login" type="email" class="validate">
+                        <label for="email">Email</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field">
+                        <input id="password-login" type="password" class="validate">
+                        <label for="password">Password</label>
+                    </div>
+                </div>
+                    <button type="submit" class="login-form button-style btn"> Login</button>
+            </form>
+            </div>
+        </div>
+    </div>
+        <h5 class="center"><a href="../signup">New user? Click here to create account</a></h5>
+</body>
+
+
+    <script src="./js/login.js"></script>
