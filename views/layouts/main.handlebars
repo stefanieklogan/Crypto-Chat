@@ -8,6 +8,11 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" type="css" href="../css/style.css">
+    <script>
+      function hide() {
+      video.removeAttribute('controls');
+    }
+  </script>
     <style>
       h1 {
         font-family: 'Roboto Mono', monospace;
@@ -24,6 +29,7 @@
         font-family: 'Playfair Display', serif;
         text-transform: uppercase;
         padding: 20px;
+        color: #35b729;
       }
       p {
         font-family: 'Lora', serif;
@@ -39,10 +45,10 @@
         margin-right: 20px;
       }
       .button-style:hover {
-        background-color: black;
+        background-color:#35b729;
       }
       .nav-style {
-        background-color: #eab65d;
+        background-color: black;
         padding: 20px;
         text-align: center;
         margin-bottom: 100px;
@@ -51,13 +57,23 @@
         padding: 20px;
         font-family: 'Playfair Display', serif; 
       }
+      #crypto-img {
+        background-image: url('./images/crypto.png');
+      }
+      #grey-background {
+        background-color: #4f4f4d;
+      }
     </style>
   <title>Crypto Chat</title>
 </head>
 
 <body>
   <header class="nav-style">
-    <h1 class="display-3">Crypto Chat</h1>
+    {{!-- <img src="./images/crypto chat.png" alt="Crypto Chat"> --}}
+    <video width="320" height="240" controls autoplay>
+      <source src="./images/crypto chat.mp4" type=video/mp4>
+    </video>
+    {{!-- <h1 class="display-3">Crypto Chat</h1> --}}
     {{!-- <nav> --}}
       {{!-- <div class="nav-wrapper nav-style center"> --}}
         <ul id="nav-mobile nav-style">       
