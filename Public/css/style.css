@@ -26,8 +26,3 @@ body {
 .signup {
     border-radius: 55em;
 };
-
-a {
-    background-color: red !important;
-    color: black;
-}
