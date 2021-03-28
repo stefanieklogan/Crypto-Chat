@@ -7,27 +7,72 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-        <link rel="stylesheet" href="../../public/css/style.css">
+    <link rel="stylesheet" type="css" href="../css/style.css">
+    <style>
+      h1 {
+        font-family: 'Roboto Mono', monospace;
+        text-transform: uppercase;
+        text-align: center;
+        color: white;
+      }
+      h3 {
+        font-family: 'Playfair Display', serif;
+        text-transform: uppercase;
+        padding: 20px;
+      }
+       h5 {
+        font-family: 'Playfair Display', serif;
+        text-transform: uppercase;
+        padding: 20px;
+      }
+      p {
+        font-family: 'Lora', serif;
+        font-size: 1.3rem;
+      }
+      .button-style {
+        color:white;
+        background-color: #4f4f4d;
+        border-radius: 4px;
+        font-family: 'Lora', serif;
+        letter-spacing: 1.5px;
+        text-align: center;
+        margin-right: 20px;
+      }
+      .button-style:hover {
+        background-color: black;
+      }
+      .nav-style {
+        background-color: #eab65d;
+        padding: 20px;
+        text-align: center;
+        margin-bottom: 100px;
+      }
+      .post-style {
+        padding: 20px;
+        font-family: 'Playfair Display', serif; 
+      }
+    </style>
+
   <title>Crypto Chat</title>
 </head>
 
 <body>
-  <header>
+  <header class="nav-style">
     <h1 class="display-3">Crypto Chat</h1>
-    <nav>
-      <div class="nav-wrapper">
-        <ul id="nav-mobile">       
+    {{!-- <nav> --}}
+      {{!-- <div class="nav-wrapper nav-style center"> --}}
+        <ul id="nav-mobile nav-style">       
           {{!-- {{#if logged_in}} --}}
-          <a href="../dashboard" class="waves-effect waves-light btn" id="dashBtn">Dashboard</a>
-          <a href="../post" class= "waves-effect waves-light btn" id="postBtn">Chat</a>
-          <a class="waves-effect waves-light btn" id="logoutBtn">Logout</a>
+          <a href="../dashboard" class="button-style btn" id="dashBtn">Dashboard</a>
+          <a href="../post" class= "button-style btn" id="postBtn">Chat</a>
+          <a class="button-style btn" id="logoutBtn">Logout</a>
           {{!-- {{else}} --}}
-          <a href="../login" class="waves-effect waves-light btn" id="login">Login</a>
-          <a href="../signup" class="waves-effect waves-light btn" id="chatBtn">Signup</a>
+          <a href="../login" class="button-style btn" id="login">Login</a>
+          <a href="../signup" class="button-style btn" id="chatBtn">Signup</a>
           {{!-- {{/if}} --}}
         </ul>
-      </div>
-    </nav>
+      {{!-- </div> --}}
+    {{!-- </nav> --}}
   </header>
   {{{ body }}}
 
