@@ -9,6 +9,23 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
     <link rel="stylesheet" type="css" href="../css/style.css">
     <style>
+      body {
+        animation: fadeInAnimation ease 3s;
+        animation-iteration-count: 1;
+        animation-fill-mode: forwards;
+        display: flex;
+        min-height: 100vh;
+        flex-direction: column;
+        }
+        @keyframes fadeInAnimation {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+   
       h1 {
         font-family: 'Roboto Mono', monospace;
         text-transform: uppercase;
@@ -24,6 +41,7 @@
         font-family: 'Playfair Display', serif;
         text-transform: uppercase;
         padding: 20px;
+        color: #35b729;
       }
       p {
         font-family: 'Lora', serif;
@@ -39,26 +57,55 @@
         margin-right: 20px;
       }
       .button-style:hover {
-        background-color: black;
+        background-color:#35b729;
       }
       .nav-style {
-        background-color: #eab65d;
+        background-color: black;
         padding: 20px;
         text-align: center;
         margin-bottom: 100px;
+      }
+      #footer-style {
+        background-color: black;
+      }
+      #footer-style2 {
+        margin-botton: 50px;
       }
       .post-style {
         padding: 20px;
         font-family: 'Playfair Display', serif; 
       }
+      #login-style {
+        padding: 50px;
+        margin-bottom: 100px;
+       background-color: white;
+      }
+      #crypto-img {
+        background-image: url('./images/crypto.png');
+      }
+      #grey-background {
+        background-color: #8B8B8B;
+      }
+      #white-background {
+        background-color: white;
+        padding: 20px;
+      }
+      .bitcoin {
+        width: 100%;
+        height: 100%;
+      }
     </style>
 
   <title>Crypto Chat</title>
 </head>
-
+<main>
 <body>
   <header class="nav-style">
-    <h1 class="display-3">Crypto Chat</h1>
+    {{!-- <img src="./images/crypto chat.png" alt="Crypto Chat"> --}}
+    <video class="responsive-video" width="320" height="240" autoplay>
+      <source src="./images/crypto chat.mp4" type=video/mp4>
+    </video>
+    {{!-- <h1 class="display-3">Crypto Chat</h1> --}}
     {{!-- <nav> --}}
       {{!-- <div class="nav-wrapper nav-style center"> --}}
         <ul id="nav-mobile nav-style">       
@@ -81,6 +128,33 @@
   <script src="/js/logout.js"></script>
   {{/if}}
 </body>
+<br>
+<br>
+<br>
+<br>
+<br>
+</main>
+<footer id="footer-style" class="page-footer"> 
+    
+    <div class="row">
+      <div class="col l6 center">
+    <img src="./images/crypto chat-2.png" alt="Crypto Chat" width="200" height="200">
+      </div>
+      <div class="col l4 offset-l2">
+          <ul>
+            <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
+            <li><a class="grey-text text-lighten-3" href="../dashboard">Dashboard</a></li>
+            <li><a class="grey-text text-lighten-3" href="../post">Chat</a></li>
+            <li><a class="grey-text text-lighten-3" href="../login">Login</a></li>
+          </ul>
+      </div>
+    </div>
+    <div id="footer-style2"class="row">
+     <div class="s12 white-text center">
+          © 2021 CRYPTO CHAT
+    </div>
+    </div>
+  </footer>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
 <script src="/js/logout.js"></script>
 
