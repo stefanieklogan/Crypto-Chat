@@ -2,12 +2,15 @@ const router = require('express').Router();
 const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-router.get('/', async (req, res) => {
+router.get('/', withAuth, async (req, res) => {
   res.render('homepage');
 });
 
-router.get('/post', async (req, res) => {
-  res.render('post');
+router.get('/post', withAuth, async (req, res) => {
+  res.render('post', { 
+    posts, 
+    logged_in: req.session.logged_in 
+  });
 });
 
 router.get('/dashboard', withAuth, async (req, res) => {
@@ -23,7 +26,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.json(err);
   });
   const posts = postData.map((post) => post.get({ plain: true }));
-  res.render('dashboard', { posts });
+  res.render('dashboard', { posts, logged_in: req.session.logged_in});
 });
 
 router.get('/signup', async (req, res) => {
@@ -55,7 +58,7 @@ router.get('/logout', (req, res) => {
   // res.render('logout');
 });
 
-router.get('/coin', async (req, res) => {
+router.get('/coin', withAuth, async (req, res) => {
   res.render('coin');
 });
 
