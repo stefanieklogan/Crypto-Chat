@@ -34,26 +34,27 @@
     <div class="container">
       <div class="row">
         <div class="col l6 s12">
-          <h5 class="white-text">Footer Content</h5>
-          <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          <h5 class="white-text">Generic Footer </h5>
+          <p class="grey-text text-lighten-4">for Page Layout Considerations</p>
         </div>
         <div class="col l4 offset-l2 s12">
-          <h5 class="white-text">Links</h5>
+          <h5 class="white-text">Creator Githubs</h5>
           <ul>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-            <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">project repo</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Raquel portfolio</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Stefanie link</a></li>
+            <li><a class="grey-text text-lighten-3" href="#!">Marisa link</a></li>
           </ul>
         </div>
       </div>
     </div>
     <div class="footer-copyright">
       <div class="container">
-      © 2014 Copyright Text
-      <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+      © 2020 CryptoChicks
+      <a class="grey-text text-lighten-4 right" href="#!">idk</a>
       </div>
     </div>
+  </footer>
 </body>
 <script>
 
@@ -88,7 +89,7 @@ const coinIdExtractor = (i) => {
 	"url": "https://coinpaprika1.p.rapidapi.com/coins",
 	"method": "GET",
 	"headers": {
-		"x-rapidapi-key": "2842162241msh469fff12ef1ec75p14d772jsnd7854fca2435",
+		"x-rapidapi-key": coinPaprika,
 		"x-rapidapi-host": "coinpaprika1.p.rapidapi.com"
 	}
     }
@@ -118,8 +119,8 @@ const currentCoinMeta = (coinId) => {
     }
 $.ajax(coinMeta).done(function (res) {
     console.log(
-        res,
-        res.rank,
+        res, 
+        res.rank, 
         res.symbol, 
         res.name, 
         res.description, 
@@ -200,13 +201,13 @@ $.ajax(coinMeta).done(function (res) {
 };
 
 // return res.symbol to feed into cryptocompareAPI to get %change, price etc.
-const resRank = "BTC";
+const resSym = "BTC";
 //temp
 const test = {
 	"async": true,
 	"crossDomain": true,
 	"url": "https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" +
-  resRank +
+  resSym +
   "&tsyms=USD",
 	"method": "GET"
 }
