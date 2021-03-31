@@ -34,9 +34,10 @@ router.get("/", async (req, res) => {
             })
 });
         
-fetch("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + arr + "&tsyms=USD") // this api accepts comma separated string data
+fetch("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + "BTC" + "&tsyms=USD") // this api accepts comma separated string data, place arr where "BTC" is
     .then(response => response.json())
-    .then(data => console.log(
+    .then(data => //console.log
+        (
         //this data needs to be pulled for each item in arr
         //return data for each as an array of objects and generate element for each object in the array in HB
         data.DISPLAY.BTC.USD.IMAGEURL,
