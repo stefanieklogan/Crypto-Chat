@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
-    <link rel="stylesheet" type="css" href="../css/style.css">
+    <link rel="stylesheet" type="css" href="./views/public/css/style.css">
     <style>
       body {
         animation: fadeInAnimation ease 3s;
@@ -33,19 +33,36 @@
         color: white;
       }
       h3 {
-        font-family: 'Playfair Display', serif;
+        font-family: 'Roboto Mono', monospace;
         text-transform: uppercase;
         padding: 20px;
       }
        h5 {
-        font-family: 'Playfair Display', serif;
+        font-family: 'Roboto Mono', monospace;
         text-transform: uppercase;
         padding: 20px;
+        color: black;
+        text-align: center;
+      }
+      a {
+        color: black;
+        text-align: center;
+        font-size: 1.2rem;
+      }
+      a:hover {
         color: #35b729;
       }
       p {
         font-family: 'Lora', serif;
         font-size: 1.3rem;
+        text-align: center;
+      }
+      nav {
+        background-color: black;
+      }
+      .line {
+        color: #35b729;
+        width: 200px;
       }
       .button-style {
         color:white;
@@ -58,22 +75,35 @@
       }
       .button-style:hover {
         background-color:#35b729;
+        color: black;
+      }
+      .button-style:active {
+        transform: translateY(-5px);
+        transition: 2sec;
       }
       .nav-style {
-        background-color: black;
+        background-color: black !important;
         padding: 20px;
         text-align: center;
         margin-bottom: 100px;
       }
+      .margin-btm {
+        margin-bottom: 40px;
+        align-items: center;
+      }
       #footer-style {
         background-color: black;
+        margin-bottom: 0px;
       }
       #footer-style2 {
-        margin-bottom: 50px;
+        margin-top: 0px;
       }
       .post-style {
-        padding: 20px;
+        padding: 50px;
         font-family: 'Playfair Display', serif; 
+      }
+      #dash-style {
+        margin-bottom: 50px;
       }
       #login-style {
         padding: 50px;
@@ -90,10 +120,6 @@
         background-color: white;
         padding: 20px;
       }
-      .bitcoin {
-        width: 100%;
-        height: 100%;
-      }
     </style>
 
   <title>Crypto Chat</title>
@@ -105,20 +131,15 @@
     <video class="responsive-video" width="320" height="240" autoplay>
       <source src="./images/crypto chat.mp4" type=video/mp4>
     </video>
-    {{!-- <h1 class="display-3">Crypto Chat</h1> --}}
-    {{!-- <nav> --}}
-      {{!-- <div class="nav-wrapper nav-style center"> --}}
-        {{!-- <div class="row" id="nav-mobile nav-style">        --}}
-
         {{#if logged_in}}
-                  <nav>
+        <nav id="nav-mobile nav-style">
           <a href="../dashboard" class="button-style btn" id="dashBtn">Dashboard</a>
-          <a href="../post" class= "button-style btn" id="postBtn">Chat</a>
+          <a href="../post" class="button-style btn" id="postBtn">Chat</a>
           <a class="button-style btn" id="logoutBtn">Logout</a>
                   </nav>
           
          {{else}}
-         <nav>
+         <nav id="nav-mobile nav-style">
           <a href="../login" class="button-style btn" id="login">Login</a>
           <a href="../signup" class="button-style btn" id="chatBtn">Signup</a>
          </nav>
@@ -143,21 +164,28 @@
 <footer id="footer-style" class="page-footer"> 
     
     <div class="row">
-      <div class="col l6 center">
+      <div class="col l6 s12 center">
     <img src="./images/crypto chat-2.png" alt="Crypto Chat" width="200" height="200">
       </div>
-      <div class="col l4 offset-l2">
+      <div class="col l4 offset-l2 s12">
           <ul>
             <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
             <li><a class="grey-text text-lighten-3" href="../dashboard">Dashboard</a></li>
-            <li><a class="grey-text text-lighten-3" href="../post">Chat</a></li>
+            {{!-- <li><a class="grey-text text-lighten-3" href="../post">Chat</a></li> --}}
             <li><a class="grey-text text-lighten-3" href="../login">Login</a></li>
           </ul>
+      </div>
+      <div class="row">
+         <div class=" col s12 center">
+        <a href="https://stefanieklogan.github.io/Homework2ResponsivePortfolio/index.html" target="_blank"><img src="./images/logo-4.png" alt="Crypto Chat" width="250" height="250"></a>
+        <a href="https://marisanesmith.github.io/responsive_portfolio/" target="_blank"><img src="./images/logo-5.png" alt="Crypto Chat" width="250" height="250"></a>
+        <a href="#" target="_blank"><img src="./images/logo-6.png" alt="Crypto Chat" width="250" height="250"></a>
+      </div>
       </div>
     </div>
     <div id="footer-style2"class="row">
      <div class="s12 white-text center">
-          © 2021 CRYPTO CHAT
+          © 2021 crypto chat
     </div>
     </div>
   </footer>
