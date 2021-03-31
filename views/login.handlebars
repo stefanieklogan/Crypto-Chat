@@ -1,11 +1,8 @@
 <body id="grey-background">
     <div class="container">
-        \<div class="row">
-            <div class="col s6">
-                <img class="responsive-img" src="./images/bitcoin.png" alt="bitcoin">
-            </div>
-            <div id="login-style" class="col s6">
-                <h5 class="center"> Welcome back!</h5>
+        <div id="login-style" class="col s12">
+            <h5 class="center"> Welcome back</h5>
+            <hr class="line">
             <form class="m6 signup">
                 <div class="row">
                     <div class="input-field">
@@ -20,12 +17,15 @@
                         <label for="password">Password</label>
                     </div>
                 </div>
-                    <button type="submit" class="login-form button-style btn"> Login</button>
+                    {{!-- <button type="submit" class="login-form button-style btn"> Login</button> --}}
             </form>
+            <div>
+                <button type="submit" class="login-form button-style btn"> Login</button>
             </div>
+            <br>
+            <a class="center" href="../signup">New user? Click here to create account</a>           
         </div>
     </div>
-        <h5 class="center black-text"><a href="../signup">New user? Click here to create account</a></h5>
 </body>
 
 
