@@ -131,15 +131,10 @@
     <video class="responsive-video" width="320" height="240" autoplay>
       <source src="./images/crypto chat.mp4" type=video/mp4>
     </video>
-    {{!-- <h1 class="display-3">Crypto Chat</h1> --}}
-    {{!-- <nav> --}}
-      {{!-- <div class="nav-wrapper nav-style center"> --}}
-        {{!-- <div class="row" id="nav-mobile nav-style">        --}}
-
         {{#if logged_in}}
         <nav id="nav-mobile nav-style">
           <a href="../dashboard" class="button-style btn" id="dashBtn">Dashboard</a>
-          <a href="../posts" class="button-style btn" id="postBtn">Chat</a>
+          <a href="../post" class="button-style btn" id="postBtn">Chat</a>
           <a class="button-style btn" id="logoutBtn">Logout</a>
                   </nav>
           
@@ -176,7 +171,7 @@
           <ul>
             <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
             <li><a class="grey-text text-lighten-3" href="../dashboard">Dashboard</a></li>
-            <li><a class="grey-text text-lighten-3" href="../posts">Chat</a></li>
+            {{!-- <li><a class="grey-text text-lighten-3" href="../post">Chat</a></li> --}}
             <li><a class="grey-text text-lighten-3" href="../login">Login</a></li>
           </ul>
       </div>
@@ -189,11 +184,6 @@
       </div>
     </div>
     <div id="footer-style2"class="row">
-      {{!-- <div class="center">
-        <img src="./images/logo-4.png" alt="Crypto Chat" width="250" height="250">
-        <img src="./images/logo-5.png" alt="Crypto Chat" width="250" height="250">
-        <img src="./images/logo-6.png" alt="Crypto Chat" width="250" height="250">
-      </div> --}}
      <div class="s12 white-text center">
           © 2021 crypto chat
     </div>
