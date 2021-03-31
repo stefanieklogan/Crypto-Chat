@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Comment } = require('../../models');
+const { Comment, User, Post } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 router.post('/', async (req, res) => {
@@ -7,6 +7,16 @@ router.post('/', async (req, res) => {
     const newComment = await Comment.create({
       ...req.body,
       user_id: req.session.user_id,
+      include: [
+        {
+          model: Post,
+          attributes: ['id'],
+        },
+        {
+          model: User,
+          attributes: ['name']
+        }
+      ],
     });
 
     res.status(200).json(newComment);
