@@ -6,7 +6,7 @@ router.get('/', withAuth, async (req, res) => {
   res.render('homepage');
 });
 
-router.get('/posts', withAuth, async (req, res) => {
+router.get('/post', withAuth, async (req, res) => {
   res.render('post', { 
     posts, 
     logged_in: req.session.logged_in 
