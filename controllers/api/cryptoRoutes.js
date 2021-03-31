@@ -27,21 +27,26 @@ router.get("/", async (req, res) => {
                         .then(data => { // 1 coin metadata by id
                             var sym = (data.symbol); // 1 symbol saved into sym since dot notation was confusing .push
                             arr.push(sym), // push 1 symbol into array
-                            console.log(arr) // each iteration of arr, completed at end. extract completed array
+                            console.log(arr),
+                            getArray(arr.lastIndexOf(arr))
+                             // each iteration of arr, completed at end. extract completed array
                             // to hand to function below. issue- arr with proper value only exists here. 
                         })
                 }
             })
 });
-        
-fetch("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + "BTC" + "&tsyms=USD") // this api accepts comma separated string data, place arr where "BTC" is
-    .then(response => response.json())
-    .then(data => //console.log
-        (
-        //this data needs to be pulled for each item in arr
-        //return data for each as an array of objects and generate element for each object in the array in HB
-        data.DISPLAY.BTC.USD.IMAGEURL,
-        data.DISPLAY.BTC.USD.PRICE,
-        data.DISPLAY.BTC.USD.CHANGEPCT24HOUR));
-    
+
+const getArray = (target) => {
+    fetch("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + target + "&tsyms=USD") // this api accepts comma separated string data, place arr where "BTC" is
+        .then(response => response.json())
+        .then(data => console.log(data)
+            
+            //this data needs to be pulled for each item in arr
+            //return data for each as an array of objects and generate element for each object in the array in HB
+            // data.DISPLAY.BTC.USD.IMAGEURL,
+            // data.DISPLAY.BTC.USD.PRICE,
+            // data.DISPLAY.BTC.USD.CHANGEPCT24HOUR
+            );
+}
+
 module.exports = router;
