@@ -1,21 +1,22 @@
 
- {{#each posts as |post|}}
+{{#each posts as |post|}}
     <body id="grey-background">
-    <div id="white-background" class="post-container post z-depth-3 post-style">
-
-
-    <div class="row">
+    <div id="dash-style" class="container">
+    <div id="white-background" class="post-style">
+    <div class="row post-style">
         <div class="col-8">
             <h5>{{post.title}}</h5>
+             <hr class="line">
             <p>Posted by {{user.name}} on {{format_date post.date_created}}</p>
         </div>
     </div>
     <div class="row blog_content">
         <p>{{post.content}}</p>
     </div>
-    <a class="button-style btn commentBtn" id="commentBtn"><i class="far fa-comment"></i> Leave a Comment</a>
-
-
+    <div id="displayComment" class="hide">
+        <p></p>
+    </div>
+    <a class="button-style btn commentBtn margin-btm" id="commentBtn"><i class="far fa-comment"></i> Leave a Comment</a>
 <div class="row comment-container hide" id="comment">
     <div class="input-group">
         <span class="input-group-text">Comment:</span>
@@ -23,10 +24,15 @@
     </div>
 
     <div>
-        <button type="submit" class="button-style btn center saveCommentBtn"><i class="far fa-save"></i></button>
+        <button type="submit" class="button-style btn saveCommentBtn margin-btm"><i class="far fa-save"></i></button>
     </div>
 
 </div>
 </div>
+</div>
+{{/each}}
+
+{{#each comments as |comment|}}
+
 {{/each}}
 <script src="./js/comment.js"></script>

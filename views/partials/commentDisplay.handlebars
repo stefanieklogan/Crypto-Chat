@@ -1,0 +1,16 @@
+
+{{#each comments as |comment|}}
+<body id="grey-background">
+    <div id="white-background" class="comment-container comment z-depth-3 comment-style">
+
+
+        <div class="row">
+            <div class="col-8">
+                <h5>{{comment.comment}}</h5>
+                <p>Posted by {{user.name}} on {{format_date comment.date_created}}</p>
+            </div>
+        </div>
+
+    </div>
+    {{/each}}
+    <script src="./js/comment.js"></script>
