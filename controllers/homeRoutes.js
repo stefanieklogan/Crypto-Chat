@@ -13,7 +13,7 @@ router.get('/', withAuth, async (req, res) => {
 //   });
 // });
 
-router.get('/post', withAuth, async (req, res) => {
+router.get('/post', async (req, res) => {
   const posts = postData.map((post) => post.get({ plain: true }));
   res.render('post', { posts, logged_in: req.session.logged_in});
 });
