@@ -15,6 +15,31 @@ router.post('/', async (req, res) => {
   }
 });
 
+router.post('/', async (req, res) => {
+  try {
+    const newComment = {
+      comment: req.body.comment,
+      user_id: req.session.user_id,
+    }
+    const comment = await Comment.create(newComment);
+
+    res.status(200).json(comment);
+  } catch (err) {
+    res.status(400).json(err);
+  }
+})
+
+//     const newComment = await Comment.create({
+//       ...req.body,
+//       user_id: req.session.user_id,
+//     });
+
+//     res.status(200).json(newComment);
+//   } catch (err) {
+//     res.status(400).json(err);
+//   }
+// });
+
 router.delete('/:id', async (req, res) => {
   try {
     const commentData = await Comment.destroy({
