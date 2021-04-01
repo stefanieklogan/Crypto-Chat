@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
-
+const crypto = require('./api/cryptoRoutes')
 router.get('/', withAuth, async (req, res) => {
   res.render('homepage');
 });
@@ -67,9 +67,9 @@ router.get('/logout', (req, res) => {
   // res.render('logout');
 });
 
-router.get('/coin', withAuth, async (req, res) => {
-  res.render('coin');
-});
+// router.get('/coinBar', async (req, res) => {
+//   res.render('coinBar', { json });
+// });
 
 module.exports = router;
 

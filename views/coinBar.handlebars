@@ -7,14 +7,10 @@ price
     <div class="row">
         <div class="col">
             <div class="card card-panel hoverable">
-                <h1>{{{json.0.name}}}</h1>
-                //for each item in array do this
-                {{#json}}
-                    <div>{{name}}</div>
-                {{/json}}
+                {{#manipulated}}
+                    <h1>{{SYM}}</h1>
+                {{/manipulated}}
             </div>
         </div>
     </div>
 </div>
-<img src="https://www.cryptocompare.com.DISPLAY.SYM.USD.IMAGEURL">
-<script src="./js/crypto.js"></script>
