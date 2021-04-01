@@ -43,60 +43,24 @@ const getArray = () => {
     fs.readFile("arr.json", 'utf-8',function(err, data) {
         if (err) throw err;     
         const arr = data;
-        console.log("getarray",data); // Print users 
+        console.log("getarray",data); 
         fetch("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + arr + "&tsyms=USD") // this api accepts comma separated string data, place arr where "BTC" is
         .then(response => response.json())
         .then(data => {
             const stuff = data.DISPLAY;
-            const manipulated = Object.entries(stuff).reduce((acc,el) => {
+            const manipulated = Object.entries(stuff).reduce((acc,el) => { // this fn turns api res into arr of objects
                 Object.entries(el[1]).forEach((stuff) => {
                     stuff[1].SYM = el[0]
                     acc.push(stuff[1])
                 })
                 return acc;
-            },[])
-            console.log(manipulated)
+            },[]) 
+            console.log(manipulated) // the array of objects to finally display in HB
             res.render('coinBar', manipulated)
             }
         )
         });
     };
 });
-// const getData = (sym) =>{
-//     for(i = 0; i < arr.length; i++){
-//         data.DISPLAY[sym].USD
-//     }
-// }
-// console.log(data.DISPLAY.BTC.USD)
- // for(i = 0; arr.length; i++){
-            //     getObj();
-            // }
-        
-            // fs.writeFile('arr.json', data.join(','), 'utf-8', function (err) {
-            //     if (err) return console.log(err);
-            //     console.log('works');
-            //     }
-                //include fn in script file on HB page then write from that 
 
-                // function getFromSym(sym){
-                //     for(i=0; i<arr.length; i++){
-                //         var arrItem = data.DISPLAY.sym.USD
-//not working, write to json file to briong into hB?
-            // instead of console.log, set .0 to given symbol data how
-            //take same arr and map here for each iteration of 0
-            //need to push to array first? dont overwrite value
-// const getObj = (sym) => {
-//     const obj = data.DISPLAY.[sym].USD
-
-// }
-// open ai gpt-3
-        // res.render('coinBar', {
-        //    item1: data.DISPLAY[0].USD,
-        //    item2: data.DISPLAY[1].USD
-        // })
-            //this data needs to be pulled for each item in arr
-            //return data for each as an array of objects and generate element for each object in the array in HB
-            // data.DISPLAY.BTC.USD.IMAGEURL,
-            // data.DISPLAY.BTC.USD.PRICE,
-            // data.DISPLAY.BTC.USD.CHANGEPCT24HOUR
 module.exports = router;
