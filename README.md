@@ -41,9 +41,17 @@
 <a name="code"></a>
 ## Example code
 
-* xxxxxxxxxxxxxxxxx
+* Example code for post, comment and user relationships:
 
-![API/tagRoute image](xxxxxxxxxxxxxxxxxxxxx)
+![Model index image](https://github.com/stefanieklogan/Week15-Project2-Group4/blob/main/Public/images/modelIndex.JPG)
+
+* Example route for saving user post:
+
+![post route](https://github.com/stefanieklogan/Week15-Project2-Group4/blob/main/Public/images/postRoute.JPG)
+
+* Example of handlebars:
+
+![handlebars](https://github.com/stefanieklogan/Week15-Project2-Group4/blob/main/Public/images/handlebars.JPG)
 
 <a name="squad"></a>
 ## Crypto Chat code squad:
