@@ -1,4 +1,3 @@
-
 {{#each posts as |post|}}
 {{!-- POST BODY --}}
 
@@ -39,10 +38,10 @@
             <br>
             {{!-- ADD COMMENT --}}
             <a class="button-style btn margin-btm" id="commentBtn"><i class="far fa-comment"></i> Leave a Comment</a>
-            <div class="row comment-container hide" id="comment">
+            <div class="row comment-container hide" id="commentContainer">
                 <div class="input-group">
                     <span class="input-group-text">Comment:</span>
-                    <textarea id="commentID" class="form-control" aria-label="With textarea"></textarea>
+                    <textarea id="commentText" class="form-control" aria-label="With textarea"></textarea>
                 </div>
 
                 {{!-- SAVE COMMENT --}}
@@ -54,5 +53,8 @@
             </div>
         </div>
     </div>
+</body>
+{{/each}}
 
-    {{/each}}
+
+ <script src="./js/comment.js"></script>
