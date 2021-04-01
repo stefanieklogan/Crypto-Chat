@@ -1,4 +1,6 @@
+
 {{#each posts as |post|}}
+{{!-- POST BODY --}}
 
 <body id="grey-background">
     <div id="dash-style" class="container">
@@ -12,16 +14,14 @@
             </div>
             <div class="row blog_content">
                 <p>{{post.content}}</p>
+                <hr>
             </div>
-            <a class="button-style btn margin-btm" id="commentBtn"><i class="far fa-comment"></i> Leave a Comment</a>
 
             {{log post}}
-            \\\\\\\\\\\\\\\\\\
-
-
+            {{!-- COMMENT BODY --}}
             {{#if post.comments}}
-            {{post.comments}}
-            {{#each posts.comments as |comment|}}
+            {{!-- {{post.comments}} --}}
+            {{#each post.comments as |comment|}}
             <div class="container">
                 <div class="row">
                     <div class="col-12">
@@ -29,19 +29,23 @@
                     </div>
                 </div>
                 <div class="row blog_content">
-                    {{log comment}}
-                    <p>{{post.comments.comment}}</p>
+                    {{!-- {{log comment}} --}}
+                    <p>{{posts.comment.comment}}</p>
+                    <p> *** </p>
                 </div>
             </div>
             {{/each}}
             {{/if}}
-
+            <br>
+            {{!-- ADD COMMENT --}}
+            <a class="button-style btn margin-btm" id="commentBtn"><i class="far fa-comment"></i> Leave a Comment</a>
             <div class="row comment-container hide" id="comment">
                 <div class="input-group">
                     <span class="input-group-text">Comment:</span>
                     <textarea id="commentID" class="form-control" aria-label="With textarea"></textarea>
                 </div>
 
+                {{!-- SAVE COMMENT --}}
                 <div>
                     <button type="submit" data-id="{{post.id}}" class="button-style btn saveCommentBtn margin-btm"><i
                             class="far fa-save"></i></button>

@@ -7,7 +7,7 @@ const postData = [
     "user_id": 1
   },
   {
-      "title": "Crypto chat: Be you, be heard.",
+      "title": "Crypto chat: Be heard, be you.",
       "content": "Welcome to crypto chat! We're a community built on helping others navigate a lot of information. Spoiler alert - we're not hear to suppress opinions and facts.",
       "user_id": 2
     }
