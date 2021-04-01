@@ -31,9 +31,7 @@ const newFormHandlerSave = async (event) => {
     });
 
     if (response.ok) {
-      console.log(comment);
-      console.log(id);
-      location.reload();
+      res.render('/dashboard');
 
     } else {
       alert('Failed to save comment');
