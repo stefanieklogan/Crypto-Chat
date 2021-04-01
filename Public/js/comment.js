@@ -1,20 +1,21 @@
-const newFormHandler = async (event) => {
+const displayCommentInput = async (event) => {
+  console.log('here');
   event.preventDefault();
-  var commentBtn = document.getElementById("commentBtn");
-  var commentBox = document.getElementById("comment");
+  var commentBtn = document.getElementById('commentBtn');
+  var commentContainer = document.getElementById('commentContainer');
 
-  commentBox.classList.remove("hide");
-  commentBtn.classList.add("hide");
+  commentContainer.classList.remove('hide');
+  commentBtn.classList.add('hide');
   console.log('commentBtn pressed');
 };
 
 document
 .querySelector('.commentBtn')
-.addEventListener('click', newFormHandler);
+.addEventListener('click', displayCommentInput);
 
 /////////////////////////////////////////////////////////
 
-const newFormHandlerSave = async (event) => {
+const saveNewComment = async (event) => {
   event.preventDefault();
   console.log('saveBtn pressed');
 
@@ -41,4 +42,4 @@ const newFormHandlerSave = async (event) => {
 
 document
 .querySelector('.saveCommentBtn')
-.addEventListener('click', newFormHandlerSave);
+.addEventListener('click', saveNewComment);
