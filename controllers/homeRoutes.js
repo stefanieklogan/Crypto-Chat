@@ -6,17 +6,16 @@ router.get('/', withAuth, async (req, res) => {
   res.render('homepage');
 });
 
-// router.get('/post', withAuth, async (req, res) => {
-//   res.render('post', { 
-//     posts, 
-//     logged_in: req.session.logged_in 
-//   });
+// router.get('/post', async (req, res) => {
+//   res.render('post');
 // });
-
-router.get('/post', withAuth, async (req, res) => {
+router.get('/post', async (req, res) => {
+  let postData = await Post.findAll({
+  });
   const posts = postData.map((post) => post.get({ plain: true }));
   res.render('post', { posts, logged_in: req.session.logged_in});
 });
+
 
 router.get('/dashboard', withAuth, async (req, res) => {
   const commentData = await Post.findAll({
