@@ -15,7 +15,7 @@ router.get("/", async (req, res) => {
             }
         }).then(res => res.json())
             .then(data => { // all coin metadata returned (in order)
-                for(i=0; i<3; i++){ // only want to display some
+                for(i=0; i<2; i++){ // only want to display some
                     fetch("https://coinpaprika1.p.rapidapi.com/coins/" + data[i].id, // grabs one coin id from metadata
                     {
                         "headers": {
@@ -46,12 +46,12 @@ const getArray = () => {
             const manipulated = Object.entries(display).reduce((acc,el) => { // this fn turns api res into arr of objects
                 Object.entries(el[1]).forEach((display) => {
                     display[1].SYM = el[0]
-                    acc.push(stuff[1])
+                    acc.push(display[1])
                 })
                 return acc;
             },[]) 
             console.log(manipulated) // the array of objects to finally display in HB, WORKS
-            res.render('coinBar', manipulated) // attempting to use manipulated (array) in coinBar.HB without success (yet)
+            res.render('coinBar', {manipulated}) // attempting to use manipulated (array) in coinBar.HB without success (yet)
             }
         )
         });
