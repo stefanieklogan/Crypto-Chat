@@ -1,14 +1,13 @@
-{{!-- data from cryptoRoutes.js API --}}
-{{!-- bar w/coin data generated:
-url for photo of coin from cc api
-price
-% change - color whether + or - --}}
+{{!-- data from controllers/api/cryptoRoutes.js API --}}
 <div class ="container">
     <div class="row">
         <div class="col">
             <div class="card card-panel hoverable">
                 {{#manipulated}}
-                    <h1>{{SYM}}</h1>
+                    <img src="https://www.cryptocompare.com{{IMAGEURL}}">
+                    <p>{{FROMSYMBOL}} {{SYM}} 
+                    {{PRICE}} {{LASTUPDATE}}
+                    {{CHANGEPCTDAY}}</p>
                 {{/manipulated}}
             </div>
         </div>

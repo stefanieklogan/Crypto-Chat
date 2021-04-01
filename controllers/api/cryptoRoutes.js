@@ -29,17 +29,19 @@ router.get("/", async (req, res) => {
                             fs.writeFile('arr.json', arr.join(','), 'utf-8', function (err) {
                                 if (err) return console.log(err);
                                 console.log('works');
+                                getArray()
                                 }
                             ) 
                         })
-                }; getArray()
+
+                };
             })
 const getArray = () => {
     fs.readFile("arr.json", 'utf-8',function(err, data) {
         if (err) throw err;     
         const arr = data;
         console.log("array from arr.json", arr); 
-        fetch("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + arr + "&tsyms=USD") // full data for several coins
+        fetch("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + arr + "&tsyms=USD&api_key=" + process.env.CC_API_KEY) // full data for several coins
         .then(response => response.json())
         .then(data => {
             const display = data.DISPLAY; // api res for display
@@ -50,8 +52,7 @@ const getArray = () => {
                 })
                 return acc;
             },[]) 
-            console.log(manipulated) // the array of objects to finally display in HB, WORKS
-            res.render('coinBar', {manipulated}) // attempting to use manipulated (array) in coinBar.HB without success (yet)
+            res.render('coinBar', {manipulated}) // array ready for use in views/coinBar.HB
             }
         )
         });
