@@ -1,12 +1,14 @@
 const router = require('express').Router();
 const { Post } = require('../../models');
-// const withAuth = require('../../utils/auth');
+const withAuth = require('../../utils/auth');
+
 
 router.post('/', async(req, res) => {
   if (!req.session.logged_in) {
     res.status(400).json({ logged_in: false, message: 'Please log in first' });
     return;
   }
+
   try {
     let newPost = {
       title: req.body.title,

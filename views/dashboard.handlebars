@@ -1,15 +1,59 @@
-
 {{#each posts as |post|}}
-    <body id="grey-background">
+{{!-- POST BODY --}}
+
+<body id="grey-background">
     <div id="dash-style" class="container">
-    <div id="white-background" class="post-style">
-    <div class="row post-style">
-        <div class="col-8">
-            <h5>{{post.title}}</h5>
-             <hr class="line">
-            <p>Posted by {{user.name}} on {{format_date post.date_created}}</p>
+        <div id="white-background" class="post-style">
+            <div class="row post-style">
+                <div class="col-8">
+                    <h5>{{post.title}}</h5>
+                    <hr class="line">
+                    <p>Posted by {{user.name}} on {{format_date post.date_created}}</p>
+                </div>
+            </div>
+            <div class="row blog_content">
+                <p>{{post.content}}</p>
+                <hr>
+            </div>
+
+            {{log post}}
+            {{!-- COMMENT BODY --}}
+            {{#if post.comments}}
+            {{!-- {{post.comments}} --}}
+            {{#each post.comments as |comment|}}
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p>Comment by {{user.name}} on {{format_date comment.date_created}}</p>
+                    </div>
+                </div>
+                <div class="row blog_content">
+                    {{!-- {{log comment}} --}}
+                    <p>{{posts.comment.comment}}</p>
+                    <p> *** </p>
+                </div>
+            </div>
+            {{/each}}
+            {{/if}}
+            <br>
+            {{!-- ADD COMMENT --}}
+            <a class="button-style btn margin-btm" id="commentBtn"><i class="far fa-comment"></i> Leave a Comment</a>
+            <div class="row comment-container hide" id="commentContainer">
+                <div class="input-group">
+                    <span class="input-group-text">Comment:</span>
+                    <textarea id="commentText" class="form-control" aria-label="With textarea"></textarea>
+                </div>
+
+                {{!-- SAVE COMMENT --}}
+                <div>
+                    <button type="submit" data-id="{{post.id}}" class="button-style btn saveCommentBtn margin-btm"><i
+                            class="far fa-save"></i></button>
+                </div>
+
+            </div>
         </div>
     </div>
+
     <div id="blog-content" class="row blog_content">
         <p>{{post.content}}</p>
     </div>
@@ -20,12 +64,9 @@
         <textarea id="commentID" class="form-control" aria-label="With textarea"></textarea>
     </div>
 
-    <div>
-        <button type="submit" class="button-style btn saveCommentBtn margin-btm"><i class="far fa-save"></i></button>
-    </div>
-
-</div>
-</div>
-</div>
+</body>
 {{/each}}
-<script src="./js/comment.js"></script>
+
+
+
+ <script src="./js/comment.js"></script>

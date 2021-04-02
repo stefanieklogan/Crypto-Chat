@@ -3,7 +3,7 @@
 ## Table of Contents
 1. [ Application. ](#application)
 2. [ Project Overview. ](#overview)
-3. [ Dependencies. ](#depend)
+3. [ Dependencies & Technology. ](#depend)
 4. [ Installation. ](#install)
 5. [ Example code. ](#code)
 6. [ Development squad. ](#squad)
@@ -21,13 +21,11 @@
 * Crypto currency has grown exponentially in the last few years and this application allows users to come together and connect with others. This application fills the void of what's missing today - an uncensored spot to communicate with other crypto currency fans. A fan can be someone new to this world or a long-time online investor. 
 
 <a name="depend"></a>
-## Dependencies
+## Dependencies & Technology
 
-* mySQL2
+* Check the package.json file - this application has several dependencies including mySQL2, express, sequelize and more.
 
-* express
-
-* sequelize
+* This application uses two APIs: Coin Paprika & Crytop Compare. Request your API keys & added to local .env file. 
 
 <a name="install"></a>
 ## Installation if forking repository
@@ -43,9 +41,17 @@
 <a name="code"></a>
 ## Example code
 
-* xxxxxxxxxxxxxxxxx
+* Example code for post, comment and user relationships:
 
-![API/tagRoute image](xxxxxxxxxxxxxxxxxxxxx)
+![Model index image](https://github.com/stefanieklogan/Week15-Project2-Group4/blob/main/Public/images/modelIndex.JPG)
+
+* Example route for saving user post:
+
+![post route](https://github.com/stefanieklogan/Week15-Project2-Group4/blob/main/Public/images/postRoute.JPG)
+
+* Example of handlebars:
+
+![handlebars](https://github.com/stefanieklogan/Week15-Project2-Group4/blob/main/Public/images/handlebars.JPG)
 
 <a name="squad"></a>
 ## Crypto Chat code squad:

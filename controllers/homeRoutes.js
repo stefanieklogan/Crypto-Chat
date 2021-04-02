@@ -1,18 +1,14 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../models');
 const withAuth = require('../utils/auth');
-
+const crypto = require('./api/cryptoRoutes')
 router.get('/', withAuth, async (req, res) => {
   res.render('homepage');
 });
 
-// router.get('/post', withAuth, async (req, res) => {
-//   res.render('post', { 
-//     posts, 
-//     logged_in: req.session.logged_in 
-//   });
+// router.get('/post', async (req, res) => {
+//   res.render('post');
 // });
-
 router.get('/post', async (req, res) => {
   let postData = await Post.findAll({
   });
@@ -22,8 +18,17 @@ router.get('/post', async (req, res) => {
 
 
 router.get('/dashboard', withAuth, async (req, res) => {
+  const commentData = await Post.findAll({
+    include: [
+      {
+        model: Comment,
+        attributes: ['comment', 'user_id', 'post_id'],
+      },
+    ]
+  });
+
   const postData = await Post.findAll({
-    sort: [Post.date_created, 'DESC'],
+    // sort: [Post.date_created, 'DESC'],
     include: [
       {
         model: User,
@@ -31,14 +36,16 @@ router.get('/dashboard', withAuth, async (req, res) => {
       },
       {
         model: Comment,
-        attributes: ['comment', 'user_id'],
-      }
+        attributes: ['comment', 'user_id', 'post_id'],
+      },
     ]
   }).catch((err) => {
     res.json(err);
   });
   const posts = postData.map((post) => post.get({ plain: true }));
-  res.render('dashboard', { posts, logged_in: req.session.logged_in});
+  const comments = commentData.map((comment) => comment.get({ plain: true}));
+  console.log(posts);
+  res.render('dashboard', { posts, logged_in: req.session.logged_in, comments});
 });
 
 router.get('/signup', async (req, res) => {
@@ -70,9 +77,9 @@ router.get('/logout', (req, res) => {
   // res.render('logout');
 });
 
-router.get('/coin', withAuth, async (req, res) => {
-  res.render('coin');
-});
+// router.get('/coinBar', async (req, res) => {
+//   res.render('coinBar', { json });
+// });
 
 module.exports = router;
 

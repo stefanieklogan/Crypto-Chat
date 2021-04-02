@@ -1,44 +1,45 @@
-const newFormHandler = async (event) => {
-    event.preventDefault();
-    var commentBtn = document.getElementById("commentBtn");
-    var commentBox = document.getElementById("comment");
+const displayCommentInput = async (event) => {
+  console.log('here');
+  event.preventDefault();
+  var commentBtn = document.getElementById('commentBtn');
+  var commentContainer = document.getElementById('commentContainer');
 
-    commentBox.classList.remove("hide");
-    commentBtn.classList.add("hide");
-    console.log('commentBtn pressed');
-  };
+  commentContainer.classList.remove('hide');
+  commentBtn.classList.add('hide');
+  console.log('commentBtn pressed');
+};
 
-  document
-  .querySelector('.commentBtn')
-  .addEventListener('click', newFormHandler);
+document
+.querySelector('.commentBtn')
+.addEventListener('click', displayCommentInput);
 
-  /////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////
 
-  const newFormHandlerSave = async (event) => {
-    event.preventDefault();
-    console.log('saveBtn pressed');
-  
-    const comment = document.querySelector('#commentID').value.trim();
-      
-    if (comment) {
-      const response = await fetch('/api/comments', {
-        method: 'POST',
-        body: JSON.stringify({ comment: comment }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
-      });
+const saveNewComment = async (event) => {
+  event.preventDefault();
+  console.log('saveBtn pressed');
 
-      if (response.ok) {
-        console.log(comment);
-        location.reload();
+  const comment = document.querySelector('#commentID').value.trim();
+  const id = event.target.getAttribute('data-id');
 
-      } else {
-        alert('Failed to save comment');
-      }
+  if (comment && id ) {
+    const response = await fetch('/api/comments', {
+      method: 'POST',
+      body: JSON.stringify({ comment, post_id: id }),
+      headers: {
+        'Content-Type': 'application/json',
+      },
+    });
+
+    if (response.ok) {
+      res.render('/dashboard');
+
+    } else {
+      alert('Failed to save comment');
     }
-  };
+  }
+};
 
-  document
-  .querySelector('.saveCommentBtn')
-  .addEventListener('click', newFormHandlerSave);
+document
+.querySelector('.saveCommentBtn')
+.addEventListener('click', saveNewComment);
