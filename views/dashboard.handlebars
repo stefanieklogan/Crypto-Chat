@@ -15,7 +15,6 @@
                 <p>{{post.content}}</p>
                 <hr>
             </div>
-
             {{log post}}
             {{!-- COMMENT BODY --}}
             {{#if post.comments}}
@@ -43,30 +42,14 @@
                     <span class="input-group-text">Comment:</span>
                     <textarea id="commentText" class="form-control" aria-label="With textarea"></textarea>
                 </div>
-
                 {{!-- SAVE COMMENT --}}
                 <div>
-                    <button type="submit" data-id="{{post.id}}" class="button-style btn saveCommentBtn margin-btm"><i
-                            class="far fa-save"></i></button>
+                    <button type="submit" data-id="{{post.id}}"" class="button-style btn saveCommentBtn margin-btm"><i
+                    class="far fa-save"></i></button>
                 </div>
-
             </div>
         </div>
     </div>
-
-    {{!-- <div id="blog-content" class="row blog_content">
-        <p>{{post.content}}</p>
-    </div>
-    <a class="button-style btn commentBtn margin-btm" id="commentBtn"><i class="far fa-comment"></i> Leave a Comment</a>
-<div class="row comment-container hide" id="comment">
-    <div class="input-group">
-        <span class="input-group-text">Comment:</span>
-        <textarea id="commentID" class="form-control" aria-label="With textarea"></textarea>
-    </div> --}}
-
 </body>
 {{/each}}
-
-
-
- <script src="./js/comment.js"></script>
+<script src="./js/comment.js"></script>
