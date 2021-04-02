@@ -10,7 +10,7 @@ const displayCommentInput = async (event) => {
 };
 
 document
-.querySelector('.commentBtn')
+.querySelector('#commentBtn')
 .addEventListener('click', displayCommentInput);
 
 /////////////////////////////////////////////////////////
@@ -19,8 +19,12 @@ const saveNewComment = async (event) => {
   event.preventDefault();
   console.log('saveBtn pressed');
 
-  const comment = document.querySelector('#commentID').value.trim();
+  const comment = document.querySelector('#commentText').value.trim();
   const id = event.target.getAttribute('data-id');
+
+console.log(comment);
+console.log(id);
+
 
   if (comment && id ) {
     const response = await fetch('/api/comments', {
@@ -32,7 +36,9 @@ const saveNewComment = async (event) => {
     });
 
     if (response.ok) {
-      res.render('/dashboard');
+      // res.render('/dashboard');
+      console.log('comment saved');
+
 
     } else {
       alert('Failed to save comment');
