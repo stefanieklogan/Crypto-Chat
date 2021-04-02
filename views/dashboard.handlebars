@@ -16,41 +16,41 @@
                 <hr>
             </div>
 
-            {{log post}}
+            {{!-- {{log post}} --}}
             {{!-- COMMENT BODY --}}
-            {{#if post.comments}}
+            {{!-- {{#if post.comments}} --}}
             {{!-- {{post.comments}} --}}
-            {{#each post.comments as |comment|}}
-            <div class="container">
+            {{!-- {{#each post.comments as |comment|}} --}}
+            {{!-- <div class="container">
                 <div class="row">
                     <div class="col-12">
                         <p>Comment by {{user.name}} on {{format_date comment.date_created}}</p>
                     </div>
-                </div>
-                <div class="row blog_content">
+                </div> --}}
+                {{!-- <div class="row blog_content"> --}}
                     {{!-- {{log comment}} --}}
-                    <p>{{posts.comment.comment}}</p>
-                    <p> *** </p>
+                    {{!-- <p>{{posts.comment.comment}}</p> --}}
+                    {{!-- <p> *** </p>
                 </div>
-            </div>
-            {{/each}}
-            {{/if}}
-            <br>
+            </div> --}}
+            {{!-- {{/each}} --}}
+            {{!-- {{/if}} --}}
+            {{!-- <br> --}}
             {{!-- ADD COMMENT --}}
-            <a class="button-style btn margin-btm" id="commentBtn"><i class="far fa-comment"></i> Leave a Comment</a>
+            {{!-- <a class="button-style btn margin-btm" id="commentBtn"><i class="far fa-comment"></i> Leave a Comment</a>
             <div class="row comment-container hide" id="commentContainer">
                 <div class="input-group">
                     <span class="input-group-text">Comment:</span>
                     <textarea id="commentText" class="form-control" aria-label="With textarea"></textarea>
-                </div>
+                </div> --}}
 
                 {{!-- SAVE COMMENT --}}
-                <div>
+                {{!-- <div>
                     <button type="submit" data-id="{{post.id}}" class="button-style btn saveCommentBtn margin-btm"><i
                             class="far fa-save"></i></button>
-                </div>
+                </div> --}}
 
-            </div>
+            {{!-- </div> --}}
         </div>
     </div>
 
