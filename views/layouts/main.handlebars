@@ -6,7 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css" integrity="sha512-HK5fgLBL+xu6dm/Ii3z4xhlSUyZgTT9tuc/hSrtw6uzJOvgRr2a9jyxxT1ely+B+xFAmJKVSTbpM/CuL7qxO8w==" crossorigin="anonymous" />
+  {{!-- <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto+Mono:wght@300;400&display=swap" rel="stylesheet"> --}}
     <link rel="stylesheet" type="css" href="./views/public/css/style.css">
     <style>
       body {
@@ -53,7 +54,7 @@
         color: #35b729;
       }
       p {
-        font-family: 'Lora', serif;
+        font-family: 'Playfair Display', serif;
         font-size: 1.3rem;
         text-align: center;
       }
@@ -89,7 +90,8 @@
       }
       .margin-btm {
         margin-bottom: 40px;
-        align-items: center;
+        margin-left: 265px;
+       justify-content: center;
       }
       #footer-style {
         background-color: black;
@@ -98,8 +100,16 @@
       #footer-style2 {
         margin-top: 0px;
       }
+      #footer-style3 {
+        margin-top: 15px;
+        font-family: 'Roboto Mono', monospace;
+      }
+      #blog-content {
+        margin-right: 50px;
+        margin-left: 50px
+      }
       .post-style {
-        padding: 50px;
+        padding: 5px;
         font-family: 'Playfair Display', serif; 
       }
       #dash-style {
@@ -168,7 +178,7 @@
       <div class="col l6 s12 center">
     <img src="./images/crypto chat-2.png" alt="Crypto Chat" width="200" height="200">
       </div>
-      <div class="col l4 offset-l2 s12">
+      <div id="footer-style3" class="col l4 offset-l2 s12">
           <ul>
             <li><a class="grey-text text-lighten-3" href="/">Home</a></li>
             <li><a class="grey-text text-lighten-3" href="../dashboard">Dashboard</a></li>
