@@ -1,4 +1,5 @@
-{{#each posts as |post|}}
+
+
 {{!-- POST BODY --}}
 <body id="grey-background">
     {{#each posts as |post|}}
@@ -16,7 +17,7 @@
                 <hr>
             </div>
 
-            {{!-- {{log post}} --}}
+            {{log post}}
 
             {{!-- COMMENT BODY --}}
             {{#if post.comments}}
@@ -27,16 +28,16 @@
                     <div class="col-12">
                         <p>Comment by {{{comment.user_id}}} on {{{format_date comment.date_created}}}</p>
                     </div>
-                </div> --}}
-                {{!-- <div class="row blog_content"> --}}
-                    {{!-- {{log comment}} --}}
+                </div> 
+                <div class="row blog_content"> 
+                    {{log comment}}
                     <p>{{{comment.comment}}}</p>
 
                 </div>
-            </div> --}}
-            {{!-- {{/each}} --}}
-            {{!-- {{/if}} --}}
-            {{!-- <br> --}}
+            </div> 
+            {{/each}}
+            {{/if}}
+            <br>
             {{!-- ADD COMMENT --}}
             <a class="button-style btn margin-btm commentBtn"><i class="far fa-comment"></i> Leave a Comment</a>
             <div class="row comment-container hide commentContainer">
@@ -45,7 +46,7 @@
                     <span class="input-group-text">Comment:</span>
                     <textarea id="commentText" class="form-control" aria-label="With textarea"></textarea>
 
-                </div> --}}
+                </div> 
 
                 {{!-- SAVE COMMENT --}}
                 <div>
@@ -57,4 +58,4 @@
     </div>
 </body>
 {{/each}}
-<script src="./js/comment.js"></script>
+<script src="../public/js/comment.js"></script>
