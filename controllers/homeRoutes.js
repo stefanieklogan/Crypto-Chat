@@ -18,6 +18,7 @@ router.get('/', withAuth, async (req, res) => {
               }
           }).then(res => res.json())
               .then(data => { // all coin metadata returned (in order)
+
                   for(i=0; i<1; i++){ // only want to display some
                       fetch("https://coinpaprika1.p.rapidapi.com/coins/" + data[i].id, // grabs one coin id from metadata
                       {
@@ -81,7 +82,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ['comment', 'user_id', 'post_id'],
+        attributes: ['comment', 'user_id', 'post_id','date_created'],
       },
     ]
   });
@@ -95,7 +96,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
       },
       {
         model: Comment,
-        attributes: ['comment', 'user_id', 'post_id'],
+        attributes: ['comment', 'user_id', 'post_id', 'date_created'],
       },
     ]
   }).catch((err) => {
