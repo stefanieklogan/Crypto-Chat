@@ -1,17 +1,16 @@
-const displayCommentInput = async (event) => {
+const displayCommentInput = (event) => {
   console.log('here');
   event.preventDefault();
-  var commentBtn = document.getElementById('commentBtn');
-  var commentContainer = document.getElementById('commentContainer');
+  event.stopPropagation();
+  var commentBtn = document.querySelector('.commentBtn');
+  var commentContainer = document.querySelector('.commentContainer');
 
   commentContainer.classList.remove('hide');
   commentBtn.classList.add('hide');
   console.log('commentBtn pressed');
 };
 
-document
-.querySelector('#commentBtn')
-.addEventListener('click', displayCommentInput);
+document.querySelector('.commentBtn').addEventListener('click', displayCommentInput);
 
 /////////////////////////////////////////////////////////
 
