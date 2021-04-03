@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400&family=Lora:wght@400;500&family=Playfair+Display:wght@400;500;600&family=Roboto+Mono:wght@300;400;500&display=swap');
+
+.post {
+    padding: 20px;
+};
+
+.post-container {
+    margin: 50px;
+};
+
+.blog_content {
+    /* font-style: italic; */
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+};
+
+.nav-wrapper {
+    color: rgb(50, 50, 92);
+};
+
+
+body {
+    background-color: rgb(223, 250, 250);
+};
+
+.signup {
+    border-radius: 55em;
+};
