@@ -15,6 +15,9 @@
 
 * Link: XXXXXXXXXXXXXXXXXXX
 
+![Crypto Chat Homepage](./Public/images/screenshot.png)
+![Crypto Chat Login Page](./Public/images/screenshot2.png)
+
 <a name="overview"></a>
 ## Project overview
 
@@ -27,7 +30,10 @@
 
 * This application uses two APIs: Coin Paprika & Crytop Compare. Request your API keys & added to local .env file. 
 
+![Crypto API](./Public/images/crypt-screenshot.png)
+
 <a name="install"></a>
+
 ## Installation if forking repository
 
 * After cloning this repository, run 'npm install' for dependencies. 
