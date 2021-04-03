@@ -10,7 +10,7 @@ const displayCommentInput = async (event) => {
 };
 
 document
-.querySelector('#commentBtn')
+.querySelector('.commentBtn')
 .addEventListener('click', displayCommentInput);
 
 /////////////////////////////////////////////////////////
