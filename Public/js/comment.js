@@ -36,8 +36,8 @@ console.log(id);
     });
 
     if (response.ok) {
-      // res.render('/dashboard');
-      console.log('comment saved');
+      location.reload();
+                console.log('comment saved');
 
 
     } else {
