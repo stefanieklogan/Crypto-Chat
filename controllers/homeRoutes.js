@@ -18,7 +18,7 @@ router.get('/', withAuth, async (req, res) => {
               }
           }).then(res => res.json())
               .then(data => { // all coin metadata returned (in order)
-                  for(i=0; i<12; i++){ // only want to display some
+                  for(i=0; i<1; i++){ // only want to display some
                       fetch("https://coinpaprika1.p.rapidapi.com/coins/" + data[i].id, // grabs one coin id from metadata
                       {
                           "headers": {
@@ -35,8 +35,9 @@ router.get('/', withAuth, async (req, res) => {
                                   getArray()
                                   }
                               ) 
+                          }).catch(error => {
+                            console.error('Error:', error);
                           })
-  
                   };
               })
   const getArray = () => {
@@ -57,7 +58,9 @@ router.get('/', withAuth, async (req, res) => {
               },[]) 
               res.render('homepage', {manipulated})
               }
-          )
+          ).catch(error => {
+            console.error('Error:', error);
+          })
           });
       };
   });
