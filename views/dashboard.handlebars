@@ -1,6 +1,5 @@
 {{#each posts as |post|}}
 {{!-- POST BODY --}}
-
 <body id="grey-background">
     <div id="dash-style" class="container">
         <div id="white-background" class="post-style">
@@ -25,13 +24,13 @@
             {{!-- <div class="container">
                 <div class="row">
                     <div class="col-12">
-                        <p>Comment by {{user.name}} on {{format_date comment.date_created}}</p>
+                        <p>Comment by {{{comment.user_id}}} on {{{format_date comment.date_created}}}</p>
                     </div>
                 </div> --}}
                 {{!-- <div class="row blog_content"> --}}
                     {{!-- {{log comment}} --}}
-                    {{!-- <p>{{posts.comment.comment}}</p> --}}
-                    {{!-- <p> *** </p>
+                    <p>{{{comment.comment}}}</p>
+
                 </div>
             </div> --}}
             {{!-- {{/each}} --}}
@@ -47,12 +46,11 @@
                 </div> --}}
 
                 {{!-- SAVE COMMENT --}}
-                {{!-- <div>
-                    <button type="submit" data-id="{{post.id}}" class="button-style btn saveCommentBtn margin-btm"><i
-                            class="far fa-save"></i></button>
-                </div> --}}
-
-            {{!-- </div> --}}
+                <div>
+                    <button type="submit" class="button-style btn saveCommentBtn margin-btm" data-id="{{post.id}}"><i
+                    class="far fa-save"></i></button>
+                </div>
+            </div>
 
         </div>
     </div>
