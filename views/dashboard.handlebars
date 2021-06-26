@@ -1,61 +1,27 @@
-
-
 {{!-- POST BODY --}}
-<body id="grey-background">
-    {{#each posts as |post|}}
-    <div id="dash-style" class="container">
-        <div id="white-background" class="post-style">
-            <div class="row post-style">
-                <div class="col-8">
-                    <h5>{{post.title}}</h5>
-                    <hr class="line">
-                    <p>Posted by {{user.name}} on {{format_date post.date_created}}</p>
-                </div>
+{{#each posts as |post|}}
+<div id="dash-style">
+    <div id="white-background" class="post-style">
+        <div class="row post-style">
+            <div class="col-8">
+                <a href="/post/{{post.id}}">
+                    <h5 class="center-align">{{post.title}}</h5>
+                </a>
+                <br>
+                <hr class="line">
+                <p>Posted by <b>{{user.name}}</b> on <i>{{format_date post.date_created}}</i></p>
             </div>
-            <div class="row blog_content">
-                <p>{{post.content}}</p>
-                <hr>
-            </div>
-
-            {{log post}}
-
-            {{!-- COMMENT BODY --}}
-            {{#if post.comments}}
-            {{#each post.comments as |comment|}}
-            <div class="container">
-
-                <div class="row">
-                    <div class="col-12">
-                        <p>Comment by {{{comment.user_id}}} on {{{format_date comment.date_created}}}</p>
-                    </div>
-                </div> 
-                <div class="row blog_content"> 
-                    {{log comment}}
-                    <p>{{{comment.comment}}}</p>
-
-                </div>
-            </div> 
-            {{/each}}
-            {{/if}}
-            <br>
-            {{!-- ADD COMMENT --}}
-            <a class="button-style btn margin-btm commentBtn"><i class="far fa-comment"></i> Leave a Comment</a>
-            <div class="row comment-container hide commentContainer">
-
-                <div class="input-group">
-                    <span class="input-group-text">Comment:</span>
-                    <textarea id="commentText" class="form-control" aria-label="With textarea"></textarea>
-
-                </div> 
-
-                {{!-- SAVE COMMENT --}}
-                <div>
-                    <button type="submit" class="button-style btn saveCommentBtn margin-btm" data-id="{{post.id}}">SUBMIT</button>
-                </div>
-            </div>
-
         </div>
+        <div class="row blog_content">
+            <p>{{post.content}}</p><br>
+            <hr class="line">
+            <a href="/post/{{post.id}}" style="color: #35b729;">
+                <p class="right-align" style="text-transform: uppercase;" id="link">
+                    <b>Join the conversation</b>
+                </p>
+            </a>
+        </div>
+        {{log post}}
     </div>
-</body>
+</div>
 {{/each}}
-<script src="/js/comment.js"></script>
