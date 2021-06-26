@@ -1,42 +1,41 @@
-    <body id="grey-background">
-    <div id="white-background" class="container center">
-        <div class="row center">
-            <h5><i class="fab fa-bitcoin"></i> Welcome new user <i class="fab fa-bitcoin"></i></h5>
+<div class="row center ">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content">
+                <h5 class="card-title">
+                    <i class="fab fa-bitcoin"></i>
+                    Welcome new user
+                    <i class="fab fa-bitcoin"></i>
+                </h5>
+                <hr class="line">
+                <form class="signup">
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="username-signup" type="text" class="validate">
+                            <label for="name">Name</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="email-signup" type="email" class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col s12">
+                            <input id="password-signup" type="password" class="validate">
+                            <label for="password">Password</label>
+                        </div>
+                    </div>
+                    <button type="submit" id="signup-form" class="button-style btn">
+                        Sign Up
+                    </button>
+                    <section><br>
+                        <a href="../login">Returning user? Click here to login</a>
+                    </section>
+                </form>
+            </div>
         </div>
-        <hr class="line">
-        <form class="col l4 m6 s4 center signup">
-
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="username-signup" type="text" class="validate">
-                    <label for="name">Name</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="email-signup" type="email" class="validate">
-                    <label for="email">Email</label>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="password-signup" type="password" class="validate">
-                    <label for="password">Password</label>
-                </div>
-            </div>
-               {{!-- <button type="submit" id="signup-form" class="button-style btn"> Signup</button> --}}
-               {{!-- <a href="/login" class="button-style btn ">Login</a> --}}
-
-        </form>
-        <div>
-            <button type="submit" id="signup-form" class="button-style btn"> Sign Up</button>
-        </div>
-
-        <br>
-        <a href="../login">Returning user? Click here to login</a>
     </div>
-    </body>
-
+</div>
 <script src="/js/signup.js"></script>
