@@ -12,10 +12,10 @@ const commentData = [
     "user_id": 2
   },
   {
-      "comment": "Can anyone answer when crypto currency began?",
-      "post_id": 1,
-      "user_id": 1
-    }
+    "comment": "Can anyone answer when crypto currency began?",
+    "post_id": 1,
+    "user_id": 1
+  }
 ]
 
 const seedComment = () => Comment.bulkCreate(commentData);

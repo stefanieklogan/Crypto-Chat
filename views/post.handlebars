@@ -1,32 +1,27 @@
-<body id="grey-background">
-<br>
-<div id="white-background" class="container post z-depth-3 post-style">
-    <div class="row center">
-        <h3> Chat Corner </h3>
-        <p>Share & interact with our Crypto Chat community!</p>
-        <form action='post_create' method="POST" class="col l10 m6 s4 center post new-post-form">
-            <div class="row">
-                <div class="input-field col s12">
-                    <input id="post-Title" type="text" name="create_post_title">
-                    <label for="name">Title:</label>
+<div class="col s12">
+    <div class="card">
+        <div class="card-content">
+            <h3 class="center-align"> Chat Corner </h3>
+            <p>Share & interact with our Crypto Chat community!</p>
+            <form action='post_create' method="POST" class="col l10 m6 s4 center post new-post-form">
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input id="post-Title" type="text" name="create_post_title">
+                        <label for="name">Title:</label>
+                    </div>
                 </div>
-            </div>
-
-            <div class="row">
-                <div class="input-field col s12">
-                    <textarea id="post-description" class="materialize-textarea" name="create_post_desc"></textarea>
-                    <label for="textarea1">Summary:</label>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="post-description" class="materialize-textarea" name="create_post_desc"></textarea>
+                        <label for="textarea1">Summary:</label>
+                    </div>
                 </div>
-            </div>
-            <div class="row center">
-            <p>We do not censor. All views are those of the author.</p>
-            </div>
-
-        </form>
-
+                <div class="row center">
+                    <p>All views are those of the author.</p>
+                </div>
+                <button type="submit" class="button-style btn center save">Create Post</button>
+            </form>
+        </div>
     </div>
-    <button type="submit" class="button-style btn center save"><i class="far fa-save"></i></button>
 </div>
-</body>
-
 <script src="/js/post.js"></script>

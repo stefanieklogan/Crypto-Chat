@@ -1,34 +1,26 @@
-{{!-- data from controllers/api/cryptoRoutes.js API --}}
-
-<body id="grey-background">
-    <div class="row center">
-        <div class="col">
+<div class="row center">
+    <div class="col s12">
         <div id="white-background">
-        <div class="card-content white-black">
-          <h3><span class="card-title">Be You, Be Heard. <br> Let's Chat</span></h3>
-          <hr class="line">
-          <p>Our mission is to bring crypto currency investors, enthusiasts and you together. Every day we connect relevant chat articles you need to better understand crypto currency. Whether you're here to achieve success in money or in life, welcome. We invite you to join us on the journey to a better financial tomorrow.</p>
-        </div>
-        </div>
+            <div class="card-content white-black">
+                <h3><span class="card-title">Be You, Be Heard. Let's Chat</span></h3>
+                <hr class="line">
+                <p>Our mission is to bring crypto currency investors, enthusiasts and you together. Every day we
+                    connect relevant chat articles you need to better understand crypto currency. We invite you to join
+                    us on the journey to
+                    a better financial tomorrow! Sign up or log in to join the conversation.</p>
+            </div>
         </div>
     </div>
-    
-    <div class="container">
-        
-{{#each manipulated}}
-    <div class="row">
-        <div class="col s3">
-            <div class="card card-panel hoverable">
-                <div class="card-title">
-                    {{SYM}} 
-                </div>
-                    <img src="https://www.cryptocompare.com{{IMAGEURL}}" width="100" height="100">
-                    <p class="green-text"> {{PRICE}} </p>
-                    <p>Updated {{LASTUPDATE}}
-                    Day Change: {{CHANGEPCTDAY}}%</p>  
-            </div>
-       </div>  
-    {{/each}} 
-    </div>   
-</body>
-
+</div>
+<div class="row">
+    {{#each manipulated}}
+    <div class="col s3">
+        <div class="card card-panel hoverable center">
+            <h4>{{SYM}}
+            </h4>
+            <img src="https://www.cryptocompare.com{{IMAGEURL}}" width="100" height="100">
+            <h5 class="truncate" style="color: #35b729;"><b>{{PRICE}}</b></h5>
+        </div>
+    </div>
+    {{/each}}
+</div>

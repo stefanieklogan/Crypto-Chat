@@ -1,74 +1,47 @@
-# Crypto Chat
+# :chart: Crypto Chat :speech_balloon:
 
-## Table of Contents
-1. [ Application. ](#application)
-2. [ Project Overview. ](#overview)
-3. [ Dependencies & Technology. ](#depend)
-4. [ Installation. ](#install)
-5. [ Example code. ](#code)
-6. [ Development squad. ](#squad)
-7. [ The other stuff: License & Badges. ](#streetcred)
-
+Crypto currency has grown exponentially in the last few years and this application allows users to come together and connect with others. This application fills the void of what's missing today - an simple spot to communicate with other crypto currency fans. A fan can be someone new to this world or a long-time online investor. 
 
 <a name="application"></a>
-## Application
+## Deployed :link:
+[Crypto Chat](https://radiant-depths-82308.herokuapp.com/)
 
-* Link: XXXXXXXXXXXXXXXXXXX
+## Dependencies & Technology :computer:
+[CryptoCompare API](https://min-api.cryptocompare.com/) 
 
-![Crypto Chat Homepage](./Public/images/screenshot.png)
-![Crypto Chat Login Page](./Public/images/screenshot2.png)
+[CoinPaprika API](https://api.coinpaprika.com/) 
 
-<a name="overview"></a>
-## Project overview
-
-* Crypto currency has grown exponentially in the last few years and this application allows users to come together and connect with others. This application fills the void of what's missing today - an uncensored spot to communicate with other crypto currency fans. A fan can be someone new to this world or a long-time online investor. 
-
-<a name="depend"></a>
-## Dependencies & Technology
+<img src="https://img.shields.io/badge/node_JS%20-%231572B6.svg?&style=for-the-badge&logo=nodeJS3&logoColor=white"/><img src="https://img.shields.io/badge/html5%20-%23E34F26.svg?&style=for-the-badge&logo=html5&logoColor=white"/>
 
 * Check the package.json file - this application has several dependencies including mySQL2, express, sequelize and more.
 
-* This application uses two APIs: Coin Paprika & Crytop Compare. Request your API keys & added to local .env file. 
+* This application uses two APIs: Coin Paprika & Crypto Compare. Request your API keys & added to local .env file. 
 
-![Crypto API](./Public/images/crypt-screenshot.png)
+## Installation
 
-<a name="install"></a>
+* After cloning this repository, run following command for dependencies. 
+```md
+npm install
+```
+* Create a '.env' file with your MySQL username & password. DB name listed below.
+```md
+DB_NAME=cryptoChat_db
+```
+* Schema and seeds files are available and should be executed prior to application use via
+```md
+npm run seed
+```
+Look for 'cryptochat_db' and three tables (user/comment/post) to verify files successfully ran.
 
-## Installation if forking repository
+* To run the application, enter the following command  inside terminal. 
+```md
+node server
+```
 
-* After cloning this repository, run 'npm install' for dependencies. 
-
-* Create a '.env' file with your MySQL port, username & password. DB name is cryptochat_db.
-
-* Schema and seeds files are available and should be executed prior to application use via 'npm run seeds'. Look for 'cryptochat_db' and three tables (user/comment/post) to verify files successfully ran.
-
-* To run the application, enter 'node server.js' inside terminal. 
-
-<a name="code"></a>
-## Example code
-
-* Example code for post, comment and user relationships:
-
-![Model index image](https://github.com/stefanieklogan/Week15-Project2-Group4/blob/main/Public/images/modelIndex.JPG)
-
-* Example route for saving user post:
-
-![post route](https://github.com/stefanieklogan/Week15-Project2-Group4/blob/main/Public/images/postRoute.JPG)
-
-* Example of handlebars:
-
-![handlebars](https://github.com/stefanieklogan/Week15-Project2-Group4/blob/main/Public/images/handlebars.JPG)
-
-<a name="squad"></a>
-## Crypto Chat code squad:
+## Crypto Chat code squad :technologist:
 
 * Stefanie Logan
 
 * Raquel Scofield
 
 * Marisa NeSmith
-
-<a name="streetcred"></a>
-## The other stuff: License & Badges
-
-* Copyright © Nicolas Gallagher and Jonathan Neal, The MIT License (MIT)

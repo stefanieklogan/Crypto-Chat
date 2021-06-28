@@ -1,0 +1,63 @@
+<div class="row">
+    {{#if rendPost.comments}}
+    <div class="col l6">
+        {{else}}
+        <div class="col l12">
+            {{/if}}
+            <div class="card z-depth-2">
+                <div class="card-content">
+                    <span class="card-title">
+                        <h5>{{rendPost.title}}</h5>
+                    </span>
+                    <p><small><i class="fas fa-pen-alt"></i> {{rendPost.user.name}} on {{format_date
+                            rendPost.date_created}}</small></p>
+                    <div class="section">
+                        <p>{{rendPost.content}}</p>
+                    </div>
+                    <div class="section center">
+                        <button class="button-style btn" id="commentBtn" style="background-color: #35b729;">
+                            <i class="fas fa-comment-medical"></i> Add a Comment</button>
+                        <div class="hide" id="commentDiv">
+                            <div class="input-group">
+                                <span class="input-group-text"></span>Comment</span>
+                                <textarea id="commentText" class="materialize-textarea"
+                                    aria-label="With textarea"></textarea>
+                            </div>
+                            <div>
+                                <button class="button-style btn" style="background-color: #35b729;" class="btn"
+                                    type="submit" id="saveCommentBtn" data-id="{{rendPost.id}}"><i
+                                        class="far fa-save"></i> Submit
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{#if rendPost.comments}}
+        <div class="col l6">
+            <div class="card z-depth-2">
+                <div class="card-content">
+                    <span class="card-title">
+                        <h5>Comments <i class="far fa-comments"></i></h5>
+                    </span>
+                    {{#each rendComms as |comment|}}
+                    <div class="section">
+                        <p class="left">{{{comment.comment}}}</p><br>
+                        <p class="right">
+                            <small>
+                                <i>
+                                    {{{comment.user.name}}}
+                                    {{{format_date comment.date_created}}}</i></small>
+                        </p>
+                    </div>
+                    <div class="divider"></div>
+                    {{/each}}
+                </div>
+            </div>
+        </div>
+        {{/if}}
+    </div>
+</div>
+
+<script src="/js/comment.js"></script>
