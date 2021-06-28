@@ -1,0 +1,29 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content">
+        <h5 class="card-title">Update or Delete your post</h5>
+        <div class="section">
+        <form action='post_update' method="PUT">
+          <div class="input-field">
+            <input id="postTitle" type="text" name="create_post_title" value="{{postDatas.title}}">
+            <label for="name">Post Title</label>
+          </div>
+          <div class="input-field">
+            <textarea id="postContent" class="materialize-textarea" name="create_post_desc">{{postDatas.content}}</textarea>
+            <label for="textarea1">Contents</label>
+          </div>
+        </form>
+        </div>
+        <button class="button-style btn"  type="submit" id="update" data-id="{{postDatas.id}}">
+          <i class="far fa-edit"></i> Update
+        </button>
+        <button class="button-style btn" id="delete" data-id="{{postDatas.id}}">
+          <i class="far fa-trash-alt"></i> Delete
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/udpost.js"></script>
