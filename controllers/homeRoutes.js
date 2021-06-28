@@ -123,11 +123,12 @@ router.get('/userposts', withAuth, async (req, res) => {
     res.status(500).json(err);
   }
 });
-  
-router.get('/post', async (req, res) => {
-  let postData = await Post.findAll({
-  });
-  const posts = postData.map((post) => post.get({ plain: true }));
+
+
+router.get('/', async (req, res) => {
+  // res.render('homepage');
+  // var arr = [];
+
   res.render('post', { posts, logged_in: req.session.logged_in });
 });
 
@@ -180,26 +181,6 @@ router.get('/logout', (req, res) => {
   } else {
     res.status(404).end();
   }
-});
-
-router.get('/', async (req, res) => {
-  
-  fetch("https://min-api.cryptocompare.com/data/pricemultifull?fsyms=" + "BTC,ETH,USDT,BNB,ADA,DOGE,XRP,UDSC,UNI" + "&tsyms=USD&api_key=" + process.env.CC_API_KEY) // full data for several coins
-    .then(response => response.json())
-    .then(data => {
-      const display = data.DISPLAY; // api res for display
-      const manipulated = Object.entries(display).reduce((acc, el) => { // this fn turns api res into arr of objects
-        Object.entries(el[1]).forEach((display) => {
-          display[1].SYM = el[0]
-          acc.push(display[1])
-        })
-        return acc;
-      }, [])
-      res.render('homepage', { manipulated })
-    }
-    ).catch(error => {
-      console.error('Error:', error);
-    })
 });
 
 module.exports = router;
