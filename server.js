@@ -1,4 +1,4 @@
-var compression = require('compression')
+// var compression = require('compression')
 const express = require('express');
 const session = require('express-session');
 const routes = require('./controllers');
@@ -25,7 +25,7 @@ const sess = {
 };
 
 app.use(session(sess));
-app.use(compression())
+// app.use(compression())
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
