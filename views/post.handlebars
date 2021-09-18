@@ -1,27 +1,24 @@
-<div class="col s12">
-    <div class="card">
-        <div class="card-content">
-            <h3 class="center-align"> Chat Corner </h3>
-            <p>Share & interact with our Crypto Chat community!</p>
-            <form action='post_create' method="POST" class="col l10 m6 s4 center post new-post-form">
-                <div class="row">
+<div class="row">
+    <div class="col s12">
+        <div class="card">
+            <div class="card-content">
+                <h3 class="center-align"> Chat Corner </h3>
+                <p>Share &amp; interact with our Crypto Chat community!</p>
+                <form action='post_create' method="POST" class="center post new-post-form">
                     <div class="input-field col s12">
                         <input id="post-Title" type="text" name="create_post_title">
-                        <label for="name">Title:</label>
+                        <label for="name">Title</label>
                     </div>
-                </div>
-                <div class="row">
                     <div class="input-field col s12">
                         <textarea id="post-description" class="materialize-textarea" name="create_post_desc"></textarea>
-                        <label for="textarea1">Summary:</label>
+                        <label for="textarea1">Summary</label>
                     </div>
-                </div>
-                <div class="row center">
                     <p>All views are those of the author.</p>
-                </div>
-                <button type="submit" class="button-style btn center save">Create Post</button>
-            </form>
+                    <div class="section">
+                        <button type="submit" class="button-style btn center save">Create Post</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
-</div>
-<script src="/js/post.js"></script>
+    <script src="/js/post.js"></script>
